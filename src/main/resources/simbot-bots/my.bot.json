@@ -1,0 +1,10 @@
+{
+  "component": "simbot.mirai",
+  "code": 123456,//qq号
+  "password": "12234",//密码
+  "config": {
+    "type": "normal",
+    "duration": 60000,
+    "protocol": "ANDROID_PAD"//登录协议
+  }
+}
