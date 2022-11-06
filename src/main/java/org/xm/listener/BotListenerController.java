@@ -17,9 +17,7 @@ import love.forte.simboot.annotation.Listener;
 import love.forte.simbot.Identifies;
 import love.forte.simbot.event.FriendMessageEvent;
 import love.forte.simbot.event.GroupMessageEvent;
-import love.forte.simbot.message.At;
-import love.forte.simbot.message.Face;
-import love.forte.simbot.message.MessagesBuilder;
+import love.forte.simbot.message.*;
 import love.forte.simbot.resources.Resource;
 import org.springframework.stereotype.Controller;
 
@@ -48,7 +46,8 @@ public class BotListenerController {
         builder.append(new At(event.getAuthor().getId()));//@某人
         builder.append(new Face(Identifies.ID(50)));//发送表情
         //发送图片 上传图片
-        builder.append(event.getBot().uploadImageBlocking(Resource.of(new URL("https://www.baidu.com/img/flexible/logo/pc/result.png"))));
+        ResourceImage resourceImage = Image.of(Resource.of(new URL("https://www.baidu.com/img/flexible/logo/pc/result.png")));
+        builder.image(resourceImage.getResource());
 //        builder.append(
 //                event.getBot().resolveImageBlocking(Identifies.ID("{BADC82A3-216B-84E6-BE60-02C2454F2F5E}.jpg"))
 //        );
